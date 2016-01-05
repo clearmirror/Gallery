@@ -352,6 +352,11 @@
             this.onslide(to);
         },
 
+        isControlVisible : function(){
+            var controlsClass = this.options.controlsClass;
+            return this.container.hasClass(controlsClass);
+        },
+
         getIndex: function () {
             return this.index;
         },
