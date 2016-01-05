@@ -179,7 +179,9 @@
             // Callback function executed when the Gallery has been closed
             // and the closing transition has been completed.
             // Is called with the gallery instance as "this" object:
-            onclosed: undefined
+            onclosed: undefined,
+            // On main image clicked
+            onimgclicked: undefined
         },
 
         carouselOptions: {
@@ -880,7 +882,9 @@
                     parent.parentNode === this.slidesContainer[0]) {
                 // Click on displayed element
                 this.preventDefault(event);
+                var slide = this.slides[this.index];
                 this.toggleControls();
+                this.options.onimgclicked.call(target, this.index, this.slide);
             }
         },
 
